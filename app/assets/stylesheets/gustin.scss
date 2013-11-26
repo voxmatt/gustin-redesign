@@ -1,0 +1,226 @@
+// Global Typography
+h1{
+  color: $primary-color;
+  font-family: $body-font-family;
+  font-size: 48px;
+}
+h2{
+  color: $primary-color;
+  font-family: $body-font-family;
+}
+.button{
+  text-transform:uppercase;
+  font-family:$sans-font-family;
+  font-weight:bold;
+  font-size:1.25rem;
+  transition: background-color .5s;
+}
+.button:hover{
+  background-color:$secondary-color;
+}
+
+ul.button-group{
+  li:first-child a{
+    border-top-left-radius:6px; border-bottom-left-radius:6px;
+    margin-right:-2px;
+  }
+  li:last-child a{
+    border-top-right-radius:6px; border-bottom-right-radius:6px;
+  }
+  .button {
+    border-color: $primary-color;
+    font-weight:bold;
+    padding:6px 10px;
+  }
+  a{
+    border:2px solid $primary-color;
+    background-color: transparent;
+    color:$primary-color;
+  }
+  a.active{
+    background-color:$primary-color;
+    color:#FFF;
+  }
+}
+
+// Navbar
+.title-area{
+  padding: 0 10px;
+  li.name{
+    width:145px;
+    background: url(logo_nav.png) no-repeat;
+  }
+}
+
+.top-bar-section{
+  li{
+    text-transform:uppercase;
+  }
+  li a:not(.button){
+    background: rgba(255,255,255,0);
+  }
+  .dropdown li a{
+    text-transform:capitalize;
+    background: $topbar-dropdown-link-bg;
+  }
+  .has-dropdown:hover > a:after{
+    border-color: rgb(255, 255, 255) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+  }
+  ul.right{
+    li:hover > a,
+    li a:not(.button):hover{
+      background:$secondary-color;
+      color: #FFF;
+    }
+    li > a{
+      color: $secondary-color;
+      text-transform: lowercase;
+    } 
+  }
+}
+
+// Homepage Carousel
+
+.homepage-carousel{
+  color: #444;
+  h1{
+    line-height: 50px;
+    text-shadow: 0px 1px 1px rgba(255,255,255,0.8);
+  }
+  .slide1 .slide-content{
+    position: absolute;
+    top:15%;
+    right:10%;
+    width: 350px;
+  }
+  p{
+    font-size:18px;
+  }
+}
+
+.section-header{
+  text-align:center;
+  h2:after,
+  h2:before{
+    content:"~"
+  }
+  padding:20px 0;
+}
+
+a.quote{
+  display:inline-block;
+  font-style:italic;
+  font-family:$sans-font-family;
+  color:#555;
+  padding-bottom:20px;
+  transition:color .5s;
+  text-align:center;
+  &:hover{
+    color:$secondary-color;
+  }
+}
+
+.boast-logo{
+  text-align:center;
+  height: 100px;
+  a img{
+    max-width:80%;
+    max-height:70%;
+    filter: url(filters.svg#grayscale); /* Firefox 3.5+ */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+    opacity:.7;
+    transition: opacity .5s;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+  }
+  a:hover img{
+    filter:none;
+    -webkit-filter: grayscale(0);
+    opacity:1;
+  }
+}
+
+// Fit Graphic
+.info-dot{
+  position:absolute;
+  display:inline-block;
+  background-color:$secondary-color;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  cursor: $cursor-pointer-value;
+  transition: background-color .5s;
+  &:after{
+    content: "";
+    position: relative;
+    top: -3px;
+    left: -3px;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid $secondary-color;
+    border-radius: 50%;
+    transition: border-color .5s;
+  }
+  &:hover,
+  &.hover-on{
+    background-color:orange;
+    &:after{
+      border-color:orange;
+    }
+  }
+  &.info-tucked-loops{top:4%;left:23%;}
+  &.info-buttons{top:12%; left:29%;}
+  &.info-denim{top:25%; left:19%;}
+  &.info-chainstitch{bottom:14%; left:8%;}
+  &.info-patch{top:1%; right:27%;}
+  &.info-beltloop{top:7%; right:25%;}
+  &.info-pockets{top:18%; right:29%;}
+  &.info-crafted{top:50%; right:26%;}
+  &.info-rivets{top:13%; right:20%;}
+
+  .info-pic{
+    display:none;
+    position:absolute; 
+    width:150px; 
+    border:1px solid orange; 
+    box-shadow: 2px 0 2px rgba(0,0,0,.5); 
+    display:inline-block; z-index:5; 
+    top:-105px; 
+    left:-70px;
+  }
+  &:hover .info-pic{
+    display:block;
+  }
+}
+.info-p{
+  color:$secondary-color;
+  font-size:1.1rem;
+  cursor: $cursor-pointer-value;
+  transition: color .5s;
+  &:hover,
+  &.hover-on{
+    color:orange;
+  }
+  .show-for-medium-up & {
+    &.info-tucked-loops{margin-top:4%;}
+    &.info-buttons{margin-top:8%;}
+    &.info-denim{margin-top:18%;}
+    &.info-chainstitch{margin-top:70%;}
+
+    &.info-beltloop{margin-top:5%;}
+    &.info-rivets{margin-top:5%;}
+    &.info-pockets{margin-top:5%;}
+
+    &.info-crafted{margin-top:35%;}
+  }
+  .show-for-small &{
+    padding:3px 10px;
+    text-align:center;
+  }
+}
+.scroller-container img{
+  height:300px;
+}

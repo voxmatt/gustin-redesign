@@ -1,0 +1,77 @@
+!!!
+%html{lang:"en"}
+  %head
+    %meta{charset:"utf-8"}
+    %meta{name:"viewport", content:"width=device-width, initial-scale=1.0"}
+
+    %title 
+      = content_for?(:title) ? yield(:title) : "Gustin - Premium menswear, wholesale prices"
+
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    %script{src:"//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
+    = javascript_include_tag "vendor/modernizr.custom"
+    = csrf_meta_tags
+
+  %body
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    .fixed
+      %nav.top-bar{"data-topbar" => ""}
+        %ul.title-area
+          %li.name
+            %h1
+              %a{href: "#"} 
+        %section.top-bar-section
+          / Right Nav Section
+          %ul.right
+            %li.has-dropdown
+              %a{href: "#"} Help
+              %ul.dropdown
+                %li
+                  %a{href: "#"} How it Works
+                %li
+                  %a{href: "#"} Our Story
+                %li
+                  %a{href: "#"} Email Us
+            %li
+              %a{href: "#"} Log In
+            %li
+              %a{href: "#"} Cart
+          / Left Nav Section
+          %ul.left.show-for-large-up
+            %li.has-dropdown
+              %a{href: "#"} Shop
+              %ul.dropdown
+                %li
+                  %a{href: "#"} Denim
+                %li
+                  %a{href: "#"} Oxford
+                %li
+                  %a{href: "#"} Accessories
+            %li.has-dropdown
+              %a{href: "#"} About
+              %ul.dropdown
+                %li
+                  %a{href: "#"} Our Story
+                %li
+                  %a{href: "#"} How it Works
+                %li
+                  %a{href: "#"} Blog
+            %li.has-dropdown
+              %a{href: "#"} Community
+              %ul.dropdown
+                %li
+                  %a{href: "#"} Message Board
+                %li
+                  %a{href: "#"} Gustin + You
+            %li.has-dropdown
+              %a{href: "#"} Follow Our Production
+              %ul.dropdown
+                %li
+                  %a{href: "#"} via Facebook
+                %li
+                  %a{href: "#"} via Twitter
+                %li
+                  %a{href: "#"} via Email
+
+
+    = yield
