@@ -217,6 +217,8 @@
               %a{href: "#"} Privacy Policy
 
 :javascript
+  initHeight = $()
+  $("ul.homepage-carousel").css({"height": $(".slide1 img").height() + "px"});
   $(".fit-toggle a").click(function(e){
     $(".fit-toggle a").toggleClass("active");
     if ($(this).hasClass("classic-toggle")){
